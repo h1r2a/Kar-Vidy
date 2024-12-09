@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f0f0f0;
+    --text-color: #ffffff;
+    --header-bg-color: rgba(0, 0, 0, 0);
+    --button-hover-color: #2980b9;
+    --form-bg-color: rgb(255, 255, 255); /* Formulaire blanc semi-transparent */
+    --form-border-color: rgb(255, 255, 255); /* Couleur de bordure semi-transparente */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50; /* Couleur de fond sombre */
+}
+
+.estimate-container {
+    position: relative; /* Position relative pour l'overlay */
+    height: 100vh; /* Remplit l'écran */
+    background-image: url('../../assets/car1.png'); /* Chemin vers l'image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Overlay semi-transparent */
+    z-index: 1; /* Assurez-vous qu'il est au-dessus de l'image */
+}
+
+
+
+.estimate-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 champs par ligne */
+    gap: 20px;
+    position: relative; /* Position relative pour le contenu */
+    z-index: 2; /* S'assurer que le formulaire est au-dessus de l'overlay */
+    padding: 20px; /* Ajout d'un padding autour du formulaire */
+    background: var(--form-bg-color); /* Fond blanc semi-transparent */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--form-border-color); /* Bordure semi-transparente */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333; /* Couleur du texte des labels pour le mode sombre */
+}
+
+select,
+input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Couleur de bordure normale */
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffff; /* Fond blanc pour les champs */
+    color: #333; /* Couleur du texte pour les champs */
+}
+
+select:focus,
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.buttons {
+    grid-column: span 3; /* Le bouton prend toute la largeur */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px; /* Ajouter un espacement au-dessus du bouton */
+}
+
+button {
+    padding: 12px; /* Ajuster le padding */
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px; /* Augmenter la taille de la police */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Ajouter une transition */
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05); /* Ajout d'un effet de mise à l'échelle */
+}
